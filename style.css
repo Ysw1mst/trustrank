@@ -1,0 +1,223 @@
+/* 배경 이미지 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('img/study00.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* 반투명한 배경 스타일 */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 문구 스타일 */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: seashell;
+    font-size: 100px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* 푸터 스타일 */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0.1, 0, 0, 0.3);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+div[class = "sidebar"] {
+    width:250px;
+    height:100%;
+    background-color:black;
+    position:fixed;
+    top:0;
+    left:-400px;
+    z-index:1;
+    transition:all 1s;
+    padding: 5px 0px 5px 15px;
+}
+
+.sidebar li a::before {
+    margin-right: 40px; /* 아이콘과 메뉴 이름 사이의 우측 여백 조절 */
+}
+
+.sidebar li a {
+    display: flex; /* 아이콘과 텍스트를 가로로 나란히 정렬 */
+    align-items: center;
+}
+
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar a, .sidebar > label {
+    display: block;
+    height: 20px;
+    padding: 20px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #000;
+}
+.sidebar ul li:hover, .sidebar > label:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+
+.sidebar #expand-sidebar:not(:checked) ~ ul { /* 데스크탑 화면에서도 메뉴를 접었더 펼칠 수 있음 */
+    display: none;
+}
+
+.sidebar ::before{
+    font-family: 'Material Icons';
+    font-size: 2.0em;
+    float: left;
+    clear: left;
+}
+.sidebar label::before{ content: '\e5d2'; }
+.sidebar li:nth-child(1) a::before{ content: '\f02e'; }
+.sidebar li:nth-child(2) a::before{ content: '\eb7e'; }
+.sidebar li:nth-child(3) a::before{ content: '\eb93'; }
+.sidebar li:nth-child(4) a::before{ content: '\eb7c'; }
+.sidebar li:nth-child(5) a::before{ content: '\e54f'; }
+.sidebar li:nth-child(6) a::before{ content: '\e57b'; }
+.sidebar li:nth-child(7) a::before{ content: '\e9f4'; }
+.sidebar li:nth-child(8) a::before{ content: '\e0e5'; }
+.sidebar li:nth-child(9) a::before{ content: '\e1c5'; }
+
+
+
+ul {
+    /* 다른 스타일 속성들을 설정할 수 있음 */
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0%, 0%, 0%);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(1);
+    }
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: seashell;
+    font-size: 70px;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation: fadeInUp 3.0s;
+}
+
+.text#secondText {
+    animation-delay: 3.0s;
+}
+
+.text#thirdText {
+
+
+
+    animation-delay: 6s;
+}
+.text#fourthText {
+    animation-delay: 9.0s;
+}
+
+
+
+li:first-child {
+    margin-top: 150px;
+}
+
+
+
+input[id="menuicon"] {
+    display: none;
+    z-index: 2;
+}
+
+input[id="menuicon"] + label {
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    height: 40px;
+    position:fixed;
+    margin: 50px;
+    z-index: 3;
+}
+
+input[id="menuicon"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    border-radius: 30px;
+    background-color: lightgray;
+    transition: all .35s;
+}
+
+input[id="menuicon"] + label span:nth-child(1) {
+    top: 0;
+}
+
+input[id="menuicon"] + label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[id="menuicon"] + label span:nth-child(3) {
+    bottom: 0;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked + label span:nth-child(2) {
+    opacity: 0;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+
+
+input[id="menuicon"]:checked + label + div {
+    left:0
+}

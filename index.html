@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trusted Rank</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-size: cover;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="text" id="firstText">
+        <p>Welcome to<br>
+            Trusted Rank</p>
+    </div>
+
+    <div class="text" id="secondText">
+        <p>어서오세요<br>
+            Trusted Rank<br>
+            입니다.</p>
+    </div>
+
+    <div class="text" id="thirdText">
+        <p>더 정확한 정보<br>
+            더 만족스러운 장소<br>
+            새로운 장소</p>
+    </div>
+    <div class="text" id="fourthText">
+        <p>태그를 추가해 보세요<br>
+            Please Add Tags!<br>
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>Trusted Rank Project<br>
+            Contact Address ysw1mst@naver.com<br>
+        </p>
+    </div>
+
+    <script>
+        function startAnimation() {
+            const textElements = document.querySelectorAll('.text');
+
+            textElements.forEach((element, index) => {
+                element.style.animation = 'none';
+                void element.offsetWidth;
+                element.style.animation = null;
+            });
+        }
+
+        function setNextBackgroundImage(imageNumber) {
+            const body = document.body;
+            body.style.backgroundImage = `url('사이트 이미지/MF${imageNumber}.gif')`;
+        }
+
+        function displayTexts() {
+            startAnimation();
+        }
+
+        // 초기에 애니메이션과 이미지 변경 시작
+        displayTexts();
+        setNextBackgroundImage(1);
+
+        // 4초마다 이미지 변경
+        setInterval(() => {
+            setNextBackgroundImage(1);
+        }, 4000);
+
+        // 8초마다 이미지 변경
+        setInterval(() => {
+            setNextBackgroundImage(2);
+        }, 8000);
+
+        // 12초마다 이미지 변경
+        setInterval(() => {
+            setNextBackgroundImage(3);
+        }, 12000);
+
+        // 16초마다 이미지 변경
+        setInterval(() => {
+            setNextBackgroundImage(4);
+        }, 16000);
+
+        // 20초마다 텍스트 출력
+        setInterval(() => {
+            displayTexts();
+        }, 12000);
+    </script>
+
+</body>
+
+</html>
