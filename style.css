@@ -11,19 +11,19 @@ body {
 
 @keyframes changeBackground {
     0% {
-        background-image: url('사이트 이미지/MF1.gif');
+        background-image: url('MF1.gif');
     }
     25% {
-        background-image: url('사이트 이미지/MF2.gif');
+        background-image: url('MF2.gif');
     }
     50% {
-        background-image: url('사이트 이미지/MF3.gif');
+        background-image: url('MF3.gif');
     }
     75% {
-        background-image: url('사이트 이미지/MF4.gif');
+        background-image: url('MF4.gif');
     }
     100% {
-        background-image: url('사이트 이미지/MF1.gif');
+        background-image: url('MF1.gif');
     }
 }
 /* 반투명한 배경 스타일 */
