@@ -2,13 +2,30 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('img/study00.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    animation: changeBackground 16s infinite; /* 새로운 애니메이션 속성 추가 */
 }
 
+@keyframes changeBackground {
+    0% {
+        background-image: url('사이트 이미지/MF1.gif');
+    }
+    25% {
+        background-image: url('사이트 이미지/MF2.gif');
+    }
+    50% {
+        background-image: url('사이트 이미지/MF3.gif');
+    }
+    75% {
+        background-image: url('사이트 이미지/MF4.gif');
+    }
+    100% {
+        background-image: url('사이트 이미지/MF1.gif');
+    }
+}
 /* 반투명한 배경 스타일 */
 .overlay {
     position: absolute;
